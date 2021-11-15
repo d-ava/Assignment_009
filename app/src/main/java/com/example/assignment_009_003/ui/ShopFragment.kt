@@ -24,7 +24,7 @@ class ShopFragment :
 
     override fun start() {
 
-        setRecycler()
+       setRecycler()
         setObserver()
     }
 
