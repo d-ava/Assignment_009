@@ -8,6 +8,7 @@ import com.example.assignment_009_003.db.ShopDatabase
 import com.example.assignment_009_003.model.ShopItem
 import com.example.assignment_009_003.network.NetworkClient
 import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.launch
@@ -34,9 +35,11 @@ class ShopViewModel : ViewModel() {
         }
     }
 
-    fun addShopTodb(shopItems: List<ShopItem>){
+    private fun addShopTodb(shopItems: List<ShopItem>){
         viewModelScope.launch(IO) {
             shopDao.addShopItems(*shopItems.toTypedArray())
         }
     }
+
+    val readFromdb: Flow<List<ShopItem>> = shopDao.readAllData()
 }

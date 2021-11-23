@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Assignment_009_003</string>
+    <string name="load">Load</string>
+    <string name="reading_from_json">reading from Json</string>
+    <string name="reading_from_db">reading from db</string>
+    <string name="room_is_empty">room is empty</string>
 </resources>
